@@ -3,4 +3,8 @@ languageCode = 'en-gb'
 title = "Leye's amazing website"
 
 [params]
-dateFormat = "Jan 2, 2006"
+    dateFormat = "Jan 2, 2006"
+
+[taxonomies]
+    author = "users"
+    category = "categories"

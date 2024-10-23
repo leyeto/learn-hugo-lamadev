@@ -1,3 +1,29 @@
 {{ define "main" }}
-<div class="single">Single Page</div>
-{{end}}
+  <div class="single">
+    <div class="singleHead">
+      <div class="singleHeadTexts">
+        <h1 class="singleHeadTitle">{{ .Title }}</h1>
+        <p class="singleHeadDescription">{{ .Params.description }}</p>
+        <div class="singleHeadDetail">
+          <img src="{{ .Params.avatar }}" loading="lazy" alt="Leye's avatar" class="singleAvatar" />
+          <span>
+            {{ range (.GetTerms "users") }}
+              <a href="{{ .Permalink }}">{{ .Name }}</a>
+            {{ end }}
+            {{ range (.GetTerms "categories") }}
+              <a href="{{ .Permalink }}" class="singleCategory">{{ .Name }}</a>
+            {{ end }}
+          </span>
+        </div>
+        <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
+      </div>
+      <img src="{{ .Params.imageBig }}" alt="{{ .Title }}" />
+    </div>
+    <div class="singleBottom">
+      <div class="singleContent">{{ .Content }}</div>
+      <div class="singleRightBar">
+        {{ partial "rightBar.html" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}

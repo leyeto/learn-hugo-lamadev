@@ -8,7 +8,11 @@
           <p class="listItemDesc">{{ .Params.description }}</p>
           <div class="listItemDetail">
             <img src="{{ .Params.avatar }}" loading="lazy" alt="Leye's avatar" class="listItemAvatar" />
-            <span> </span>
+            <span>
+              {{ range (.GetTerms "users") }}
+                <a href="{{ .Permalink }}" class="listItemAuthor">{{ .Name }}</a>
+              {{ end }}</span
+            >
             <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
           </div>
           <div class="listItemCategories">

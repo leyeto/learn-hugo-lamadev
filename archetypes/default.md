@@ -1,5 +1,11 @@
 +++
+title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = '{{ .Date }}'
 draft = false
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
+description = ""
+image = ""
+imageBig= ""
+categories = ["general"]
+users = ["Leye"]
+avatar = "/images/avatar.webp"
 +++

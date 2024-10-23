@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +8,9 @@
   </head>
   <body>
     <div class="container">
-      {{partial "navbar.html" . }} 
-      {{block "main" . }} {{ end }} 
-      {{partial "footer.html" . }}
+      {{ partial "navbar.html" . }}
+      {{ block "main" . }}{{ end }}
+      {{ partial "footer.html" . }}
     </div>
   </body>
 </html>

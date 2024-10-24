@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="{{ or .Params.description .Site.Params.description }}" />
+    <title>{{ .Title }}</title>
     <link rel="stylesheet" href="/styles/styles.css" defer />
   </head>
   <body>
@@ -12,5 +13,6 @@
       {{ block "main" . }}{{ end }}
       {{ partial "footer.html" . }}
     </div>
+    <script src="/js/app.js" defer></script>
   </body>
 </html>
